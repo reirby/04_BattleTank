@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// copyright AKU
 
 #pragma once
 
@@ -26,11 +26,10 @@ public:
 	UFUNCTION(BlueprintCallable, Category = Input)
 	void IntentTurnRight(float Throw);
 
-	// TODO check best protection
-	
-	virtual void RequestDirectMove(const FVector& MoveVelocity, bool bForceMaxSpeed) override;
 
 private:
+	// called from the pathfind logic by the AI controllers
+	virtual void RequestDirectMove(const FVector& MoveVelocity, bool bForceMaxSpeed) override;
 	UTankTrack* LeftTrack = nullptr;
 	UTankTrack* RightTrack = nullptr;
 };
