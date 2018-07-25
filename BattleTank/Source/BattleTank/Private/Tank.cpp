@@ -15,7 +15,8 @@ ATank::ATank()
 	PrimaryActorTick.bCanEverTick = false;
 	
 	auto TankName = GetName();
-	UE_LOG(LogTemp, Warning, TEXT(" %s AKU:Tank_C++ construct"), *TankName);
+
+	
 }
 
 
@@ -24,7 +25,8 @@ void ATank::BeginPlay()
 {
 	Super::BeginPlay();	
 	auto TankName = GetName();
-	UE_LOG(LogTemp, Warning, TEXT(" %s AKU:Tank_C++ begin play"), *TankName);
+
+	TankAimingComponent = FindComponentByClass<UTankAimingComponent>();
 }
 
 
