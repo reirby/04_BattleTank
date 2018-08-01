@@ -20,6 +20,8 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+	void SetPawn(APawn * InPawn);
+
 	virtual void BeginPlay() override;
 	
 	
@@ -43,6 +45,9 @@ private:
 
 	UPROPERTY(EditDefaultsOnly)
 	float LineTraceRange = 1000000;
+
+	UFUNCTION()
+	void OnPossedTankDeath();
 
 	bool GetLookDirection(FVector2D Screenlocation, FVector& LookDirection) const;
 	bool GetLookVectorHitLocation(FVector LookDirection, FVector& Hitlocation) const;

@@ -20,6 +20,12 @@ private:
 
 	virtual void BeginPlay() override;
 
+	virtual void SetPawn(APawn* InPawn) override;
+
+	UFUNCTION()
+	void OnPossedTankDeath();
+
+
 protected:
 	// how close AI tank can get to player
 	UPROPERTY(EditDefaultsOnly, category = "Setup")
